@@ -1,0 +1,29 @@
+﻿<Window x:Class="Lab_3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab_3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="250" Width="330">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBox Name="Input" Grid.ColumnSpan="3" Margin="15" VerticalAlignment="Center"/>
+        <Button Name="NumberskButton" Content="Зчитати числа" Margin="15 0 0 15" Padding="10 5" Grid.Column="0" Grid.Row="2" Click="NumberskButton_Click"/>
+        <Button Name="EvenAndOddButton" Content="Перевірити парність" Margin="15 0 0 15" Padding="10 5" Grid.Column="0" Grid.Row="3" Click="EvenAndOddButton_Click"/>
+        <Button Name="BracketsButton" Content="Перевірити дужки" Margin="15 0 0 15" Padding="10 5" Grid.Column="0" Grid.Row="4" Click="BracketsButton_Click"/>
+        <ListBox Name="Output" Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" Margin="15 0 15 15"/>
+
+    </Grid>
+</Window>

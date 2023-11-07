@@ -1,0 +1,40 @@
+﻿<Window x:Class="Lab_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="900">
+    <Grid> <!--Сітка-->
+        <Grid.RowDefinitions> <!--Рядки-->
+            <RowDefinition Height="Auto"/> <!--Перший рядок із текстовим полем-->
+            <RowDefinition/> <!--Рядки для кнопок-->
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/> <!--Рядки для кнопок-->
+        </Grid.RowDefinitions> <!--Колонки-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/> <!--Першиа колонка з кнопками-->
+            <ColumnDefinition/> <!--Колонка з полем для виводу спсиків-->
+        </Grid.ColumnDefinitions>
+        
+        <TextBox Name="Input" Grid.ColumnSpan="2" Margin="15" VerticalAlignment="Center" Text="Текст для аналізу..."/>  <!--Текстове поле-->
+        <Button Name="IntegersButton" Content="Список чисел" Grid.Row="1" Margin="15 0 20 15" Click="IntegerButton_Click"/> <!--Кнопка, що показує список чисел, зчитаних з текстового рядка-->
+        <Button Name="SymbolsButton" Content="Список символів" Grid.Row="2" Margin="15 0 20 15" Click="SymbolsButton_Click"/> <!--Кнопка, що показує список символів, зчитаних з текстового рядка-->
+        <Button Name="AtomsButton" Content="Список атомів" Grid.Row="3" Margin="15 0 20 15" Click="AtomsButton_Click"/> <!--Кнопка, шо показує список атомів, зчитаниз з текстового рядка-->
+        <Button Name="FamilyButton" Content="Сім'ї з двома дітьми" Grid.Row="4" Margin="15 0 20 15" Click="FamilyButton_Click"/> <!--Кнопка, що показує сім'є з двома дітьми-->
+        <Button Name="WifeButton" Content="Жінки з двома дітьми" Grid.Row="5" Margin="15 0 20 15" Click="WifeButton_Click"/> <!--Кнопка, що показує жінок з двома дітьми-->
+        <Button Name="PersonButton" Content="Імена всіх людей" Grid.Row="6" Margin="15 0 20 15" Click="PersonButton_Click"/> <!--Кнопка, що показує імена всіх людей-->
+        <Button Name="WorkingWifeButton" Content="Всі дружини, що працюють" Grid.Row="7" Margin="15 0 20 15" Click="WorkingWifeButton_Click"/> <!--Кнопка, що показує всіх дружин, що працюють-->
+        <Button Name="WorkerButton" Content="Працівники зі стажем менше 10 років" Grid.Row="8" Margin="15 0 20 15" Click="WorkerButton_Click"/> <!--Кнопка, що показує працівників зі стажем менше 10 років-->
+        <Button Name="AddButton" Content="Додати сім'ю" Grid.Row="9" Margin="15 0 20 15" Click="AddButton_Click"/> <!--Кнопка для додавання родини-->
+        <Button Name="SumbitButton" Content="Додати члена сім'ї" Grid.Row="10" Margin="15 0 20 15" Click="SumbitButton_Click"/> <!--Кнопка для додавання члена родини-->
+        <ListBox Name="Output" Grid.Column="1" Grid.Row="1" Grid.RowSpan="10" Margin="0 0 15 15"/> <!--Поле для виводу списків-->
+    </Grid>
+</Window>
