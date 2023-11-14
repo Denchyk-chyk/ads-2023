@@ -23,7 +23,7 @@ namespace Lab_3
 			lable.Text = header; //Вивід заголовка
 			box.Items.Clear(); //Очищення елемента ListBox 
 
-			while (stack.Peek(out T? value)) //Перелік всіх елементів стека
+			while (stack.Peek(out T value)) //Перелік всіх елементів стека
 				box.Items.Add(value); //Вивід вузла в ListBox
 		}
 	}

@@ -5,25 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab_3"
         mc:Ignorable="d"
-        Title="MainWindow" Height="250" Width="330">
+        Title="MainWindow" Height="300" Width="400">
     <Grid>
+        <!--Сітка-->
+
         <Grid.ColumnDefinitions>
+            <!--Стовпці-->
             <ColumnDefinition Width="Auto"/>
+            <!--Кнопка-->
             <ColumnDefinition />
+            <!--ListBox-->
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <!--Рядки-->
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <!--Поле для вводу тексту-->
+            <RowDefinition/>
+            <!--Кнопки-->
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <!--Кнопки-->
         </Grid.RowDefinitions>
 
         <TextBox Name="Input" Grid.ColumnSpan="3" Margin="15" VerticalAlignment="Center"/>
-        <Button Name="NumberskButton" Content="Зчитати числа" Margin="15 0 0 15" Padding="10 5" Grid.Column="0" Grid.Row="2" Click="NumberskButton_Click"/>
-        <Button Name="EvenAndOddButton" Content="Перевірити парність" Margin="15 0 0 15" Padding="10 5" Grid.Column="0" Grid.Row="3" Click="EvenAndOddButton_Click"/>
+        <!--Поле для вводу тексту-->
+        <Button Name="NumberskButton" Content="Зчитати числа" Margin="15 0 0 15" Padding="10 5" Grid.Column="0" Grid.Row="1" Click="NumberskButton_Click"/>
+        <!--Кнопка-->
+        <Button Name="EvenButton" Content="Зчитати лише парні" Margin="15 0 0 15" Padding="10 5" Grid.Column="0" Grid.Row="2" Click="EvenButton_Click"/>
+        <!--Кнопка-->
+        <Button Name="OddButton" Content="Зчитати лише непарні" Margin="15 0 0 15" Padding="10 5" Grid.Column="0" Grid.Row="3" Click="OddButton_Click"/>
+        <!--Кнопка-->
         <Button Name="BracketsButton" Content="Перевірити дужки" Margin="15 0 0 15" Padding="10 5" Grid.Column="0" Grid.Row="4" Click="BracketsButton_Click"/>
-        <ListBox Name="Output" Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" Margin="15 0 15 15"/>
+        <!--Кнопка-->
+        <TextBlock Name="Info" Grid.Row="1" Grid.Column="1" Margin="15 0 15 15" TextWrapping="Wrap"/>
+        <!--Поле для виводу тексту-->
+        <ListBox Name="Output" Grid.Row="2" Grid.Column="1" Grid.RowSpan="4" Margin="15 0 15 15"/>
+        <!--ListBox-->
 
     </Grid>
 </Window>
