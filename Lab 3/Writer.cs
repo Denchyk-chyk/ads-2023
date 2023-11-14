@@ -2,39 +2,29 @@
 
 namespace Lab_3
 {
-	internal class Writer
-    {
+	internal class Writer<T>
+	{
+		//Реазізація патерна проєктування Singletine
+		private static Writer<T> _sigletone; //Екземпляр
+
+		public static Writer<T> GetInstance() //Метод, що заміняє конструктор
+		{
+			if (_sigletone == null) //Екземпляр відсутній
+				_sigletone = new Writer<T>(); //Створення екземпляра
+
+			return _sigletone; //Повернення екземпляра
+		}
+
+		private Writer() {}
+
 		//Виводить всі елементи стека в графічний елемент ListBox
-		public void Write(ListBox box, Stack stack, string header)
+		public void Write(ListBox box, Stack<T> stack, TextBlock lable, string header)
 		{
-			box.Items.Clear();
-			box.Items.Add(header);
+			lable.Text = header; //Вивід заголовка
+			box.Items.Clear(); //Очищення елемента ListBox 
 
-			while (stack.Peek(out object? value))
-				box.Items.Add(value);
-		}
-
-		//Виводить всі елементи стека та всі елементи стеків у ньому в графічний елемент ListBox
-		public void WriteMulti(ListBox box, Stack stack, Stack headers)
-		{
-			box.Items.Clear();
-			Write(box, stack, headers);
-		}
-
-		//Допоміжний метод для реалізації рекурсії
-		private void Write(ListBox box, Stack stack, Stack headers)
-		{
-			headers.Peek(out object? header);
-			if (header != null)
-				box.Items.Add(header);
-
-			while (stack.Peek(out object? value))
-			{
-				if (value is Stack)
-					Write(box, value as Stack, headers);
-				else
-					box.Items.Add(value);
-			}
+			while (stack.Peek(out T? value)) //Перелік всіх елементів стека
+				box.Items.Add(value); //Вивід вузла в ListBox
 		}
 	}
 }
