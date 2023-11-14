@@ -1,6 +1,4 @@
-﻿using System.Configuration;
-
-namespace Lab_2
+﻿namespace Lab_2
 {
 	//Користувацька реалізація зв'язаних списків
 	public class LinkedList
