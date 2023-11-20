@@ -1,92 +1,123 @@
 ﻿namespace Lab_4
 {
 	//Користувацька реалізація черги
-	internal class Queue
+	internal class Queue<T>
 	{
-		public bool IsntEmpty { get; private set; } //Збергіає те чи черга не порожня
+		private int _length; //Довжина черги
+		private Node<T>? _last = null; //Останній елемент
+		private Node<T>? _first = null; //Перший елемент
 
-		private Node _head = default; //Перший елемент
-		private Node _tail = default; //Останній елемент
-
-		//Додавання елемента
-		public void Push(string value)
+		//Додавання елемента, якщо стек порожній
+		private bool PushToEmpty(T value)
 		{
-			if (_head == default)
+			if (_length == 0)
 			{
-				_head = new Node(value, default, default);
-				_tail = _head;
-				IsntEmpty = true;
+				_first = new Node<T>(value, null, null);
+				_last = _first;
+			}
+			
+			_length++;
+			return _length == 1;
+		}
+
+		//Додавання елемента на початок
+		public void PushForward(T value)
+		{
+			if (!PushToEmpty(value))
+			{
+				Node<T> formerFirst = _first;
+				_first = new Node<T>(value, null, formerFirst);
+				formerFirst.Previous = _first;
+			}
+		}
+
+		//Додавання елемента в кінець
+		public void PushBack(T value)
+		{
+			if (!PushToEmpty(value))
+			{
+				Node<T> formerLast = _last;
+				_last = new Node<T>(value, formerLast, null);
+				formerLast.Next = _last;
+			}
+		}
+
+		//Перегляд та видалення елемента
+		private T Remove(ref Node<T> source, Node<T> newSource, Action doIfEmpty, Action doIfNot)
+		{
+			if (_length == 0)
+			{
+				return default;
 			}
 			else
 			{
-				Node formerHead = _head;
-				_head = new Node(value, default, formerHead);
-				formerHead.Previous = _head;
-			}
-		}
+				T value = source.Value;
+				source = newSource;
+				_length--;
 
-		//Видалення поточного елемента
-		public bool Peek(out string value)
-		{
-			value = IsntEmpty ? _tail.Value : string.Empty;
-			return Pop();
+				if (_length == 0) doIfEmpty();
+				else doIfNot();
+
+				return value;
+			}
 		}
 
 		//Перегляд та видалення поточного елемента
-		public bool Pop()
-		{
-			if (IsntEmpty)
-			{
-				_tail = _tail.Previous;
+		public T RemoveFirst() => Remove(ref _first, _first.Next, () => _last = null, () => _first.Previous = null);
 
-				if (_tail == default)
-				{
-					IsntEmpty = false;
-					_head = default;
-				}
-			}
-
-			return IsntEmpty;
-		}
+		//Перегляд та видалення поточного елемента
+		public T RemoveLast() => Remove(ref _last, _last.Previous, () => _first = null, () => _last.Next = null);
 
 		//Очищення черги
-		public void Clear()
+		public bool Clean()
 		{
-			_head = default;
-			_tail = default;
+            if (_length == 0)
+            {
+				return false;
+			}
+			else
+			{
+				_first = null;
+				_last = null;
+				_length = 0;
+				return false;
+			}
+		}
+
+		//Реалізація циклу foreach
+		public void DoForEach(Action<T> action)
+		{
+			for (int i = _length; i > 0; i--)
+			{
+				T value = RemoveFirst();
+				PushBack(value);
+				action(value);
+			}
 		}
 
 		//Видалення елемента за його значенням
-		public Queue Remove(string value, out bool success)
+		public bool Remove(T value)
 		{
-			Queue newQueue = new Queue();
-			success = false;
+			bool success = false;
 
-			while (newQueue.Peek(out string current))
-			{
-				if (success || !value.Equals(current))
+			DoForEach(current => 
+			{ 
+				if (!success && value.Equals(current))
 				{
-					newQueue.Push(current);
+					RemoveLast();
 					success = true;
 				}
-			}
+			});
 
-			return newQueue;
+			return success;
 		}
 	}
 
-	//Користувацька реалізація вузлів зв'язаних списків (тут стеків)
-	public class Node
+	//Користувацька реалізація вузлів зв'язаних списків (тут черги)
+	internal class Node<T>(T value, Node<T> previous, Node<T> next)
 	{
-		public string Value { get; set; } //Значення
-		public Node Next { get; set; } //Посилання на наступний елемент
-		public Node Previous { get; set; } //Посилання на попередній елемент
-
-		public Node(string value, Node previous, Node next)
-		{
-			Value = value;
-			Next = next;
-			Previous = previous;
-		}
+		public T Value { get; set; } = value; //Значення
+		public Node<T> Next { get; set; } = next; //Посилання на наступний вузол
+		public Node<T> Previous { get; set; } = previous; //Посилання на попередній вузол
 	}
 }
