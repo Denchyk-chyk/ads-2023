@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab_4"
         mc:Ignorable="d"
-        Title="MainWindow" Height="300" Width="400">
+        Title="MainWindow" Height="330" Width="400">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
@@ -24,6 +25,8 @@
         <Button x:Name="RemoveValueButton" Content="Видалити елемент"  Grid.Row="2" Margin="15 0 15 15" Click="RemoveValueButton_Click"/>
         <Button x:Name="RemoveThirdButton" Content="Видалити кожен третій"  Grid.Row="3" Margin="15 0 15 15" Click="RemoveThirdButton_Click"/>
         <Button x:Name="DisplayButton" Content="Вивести список"  Grid.Row="4" Margin="15 0 15 15" Click="DisplayButton_Click"/>
-        <ListBox x:Name="Output" Margin="0 0 15 15" Grid.Column="1" Grid.Row="1" Grid.RowSpan="4"/>
+        <Button x:Name="CleanButton" Content="Очистити список"  Grid.Row="5" Margin="15 0 15 15" Click="CleanButton_Click"/>
+        <TextBlock x:Name="Info" TextWrapping="Wrap" Margin="0 0 15 15" Grid.Column="1" Grid.Row="1"/>
+        <ListBox x:Name="Output" Margin="0 0 15 15" Grid.Column="1" Grid.Row="2" Grid.RowSpan="4"/>
     </Grid>
 </Window>
