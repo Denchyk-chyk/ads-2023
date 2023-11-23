@@ -5,10 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab_4"
         mc:Ignorable="d"
-        Title="MainWindow" Height="330" Width="400">
+        Title="MainWindow" Height="600" Width="900">
     <Grid>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
@@ -16,17 +22,32 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <TextBox x:Name="Input" VerticalAlignment="Center" FontSize="14" Margin="15" Grid.ColumnSpan="2"/>
-        <Button x:Name="AddButton" Content="Додати елемент"  Grid.Row="1" Margin="15 0 15 15" Click="AddButton_Click"/>
-        <Button x:Name="RemoveValueButton" Content="Видалити елемент"  Grid.Row="2" Margin="15 0 15 15" Click="RemoveValueButton_Click"/>
-        <Button x:Name="RemoveThirdButton" Content="Видалити кожен третій"  Grid.Row="3" Margin="15 0 15 15" Click="RemoveThirdButton_Click"/>
-        <Button x:Name="DisplayButton" Content="Вивести список"  Grid.Row="4" Margin="15 0 15 15" Click="DisplayButton_Click"/>
-        <Button x:Name="CleanButton" Content="Очистити список"  Grid.Row="5" Margin="15 0 15 15" Click="CleanButton_Click"/>
-        <TextBlock x:Name="Info" TextWrapping="Wrap" Margin="0 0 15 15" Grid.Column="1" Grid.Row="1"/>
-        <ListBox x:Name="Output" Margin="0 0 15 15" Grid.Column="1" Grid.Row="2" Grid.RowSpan="4"/>
+        <TextBox x:Name="Input" VerticalAlignment="Center" FontSize="14" Margin="15 15 15 0" Grid.ColumnSpan="3"/>
+        <TextBlock x:Name="Info" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Margin="15" Grid.Row="1" Grid.ColumnSpan="3"/>
+        <ListBox x:Name="Output" Margin="0 0 15 15" Grid.Column="2" Grid.Row="2" Grid.RowSpan="9"/>
+
+        <Button x:Name="PushBack" Content="Додати елемент на початок" Grid.Row="2" Margin="15 0 15 15" Padding="15 0" Click="PushBack_Click"/>
+        <Button x:Name="PushForward" Content="Додати елемент в кінець" Grid.Row="3" Margin="15 0 15 15" Padding="15 0" Click="PushForward_Click"/>
+        <Button x:Name="RemoveLast" Content="Видалити останній елемент" Grid.Row="4" Margin="15 0 15 15" Padding="15 0" Click="RemoveLast_Click"/>
+        <Button x:Name="RemoveFirst" Content="Видалити перший елемент" Grid.Row="5" Margin="15 0 15 15" Padding="15 0" Click="RemoveFirst_Click"/>
+        <Button x:Name="RemoveValue" Content="Видалити елемент зі значенням" Grid.Row="6" Margin="15 0 15 15" Padding="15 0" Click="RemoveValue_Click"/>
+        <Button x:Name="RemoveThird" Content="Видалити кожен третій елемент" Grid.Row="7" Margin="15 0 15 15" Padding="15 0" Click="RemoveThird_Click"/>
+        <Button x:Name="CheckPalindrom" Content="Пеервірити текст на паліндром" Grid.Row="8" Margin="15 0 15 15" Padding="15 0" Click="CheckPalindrom_Click"/>
+        <Button x:Name="DisplayDequeu" Content="Вивести список" Grid.Row="9" Margin="15 0 15 15" Padding="15 0" Click="DisplayDequeu_Click"/>
+        <Button x:Name="CleanDequee" Content="Очистити список" Grid.Row="10" Margin="15 0 15 15" Padding="15 0" Click="CleanDequee_Click"/>
+
+        <Button x:Name="AddPersonButton" Content="Додати елемент" Grid.Column="1" Grid.Row="2" Margin="0 0 15 15" Padding="15 0" Click="AddPersonButton_Click_1"/>
+        <Button x:Name="RemovePersonButton" Content="Видалити перший елемент" Grid.Column="1" Grid.Row="3" Margin="0 0 15 15" Padding="15 0" Click="RemovePersonButton_Click_1"/>
+        <Button x:Name="DisplayHusbands" Content="Показати лише чоловіків" Grid.Column="1" Grid.Row="4" Padding="15 0" Margin="0 0 15 15" Click="DisplayHusbands_Click"/>
+        <Button x:Name="DisplayWifes" Content="Показати лише дружин" Grid.Column="1" Grid.Row="5" Padding="15 0" Margin="0 0 15 15" Click="DisplayWifes_Click"/>
+        <Button x:Name="DisplayChildren" Content="Показати лише дітей" Grid.Column="1" Grid.Row="6" Padding="15 0" Margin="0 0 15 15" Click="DisplayChildren_Click"/>
+        <Button x:Name="DisplayPeople" Content="Вивести список" Grid.Column="1" Grid.Row="7" Margin="0 0 15 15" Padding="15 0" Click="DisplayPeople_Click"/>
+        <Button x:Name="CleanPeople" Content="Очистити список" Grid.Column="1" Grid.Row="8" Margin="0 0 15 15" Padding="15 0" Click="CleanPeople_Click"/>
+
     </Grid>
 </Window>
