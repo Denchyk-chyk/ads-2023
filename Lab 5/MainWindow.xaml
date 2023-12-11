@@ -1,0 +1,37 @@
+﻿<Window x:Class="Lab_5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="660">
+    <Grid>
+        <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition/>
+        <RowDefinition/>
+        <RowDefinition/>
+        <RowDefinition/>
+        <RowDefinition/>
+        <RowDefinition/>
+        <RowDefinition/>
+        <RowDefinition/>
+    </Grid.RowDefinitions>
+
+        <TextBox Name="Input" Grid.ColumnSpan="3" Margin="15" VerticalAlignment="Center"/>
+        <Button Name="Numbers" Content="Дерево з чисел" Margin="15 0 0 15" Padding="10 5" Grid.Column="0" Grid.Row="1" Click="Numbers_Click"/>
+        <Button Name="FindNumbers" Content="Інформація про вершину" Margin="15 0 0 15" Padding="10 5" Grid.Column="0" Grid.Row="2" Click="FindNumbers_Click"/>
+        <Button Name="FindMax" Content="Максимальне число" Margin="15 0 0 15" Padding="10 5" Grid.Column="0" Grid.Row="3" Click="FindMax_Click"/>
+        <Button Name="Letters" Content="Дерево з символів" Margin="15 0 0 15" Padding="10 5" Grid.Column="0" Grid.Row="4" Click="Letters_Click"/>
+        <Button Name="Dublicate" Content="Симовли, що повторюються" Margin="15 0 0 15" Padding="10 5" Grid.Column="0" Grid.Row="5" Click="Dublicate_Click"/>
+        <Button Name="Words" Content="Дерево зі слів" Margin="15 0 0 15" Padding="10 5" Grid.Column="0" Grid.Row="6" Click="Words_Click"/>
+        <Button Name="LetterWords" Content="Видалити слова на літеру" Margin="15 0 0 15" Padding="10 5" Grid.Column="0" Grid.Row="7" Click="LetterWords_Click"/>
+        <Button Name="Layout" Content="Змінити розкладку" Margin="15 0 0 15" Padding="10 5" Grid.Column="0" Grid.Row="8" Click="Layout_Click"/>
+        <TextBlock Name="Info" Grid.Row="1" Grid.Column="1" Margin="15 0 15 15" TextWrapping="Wrap"/>
+        <TreeView Name="Output" Grid.Row="2" Grid.Column="1" Grid.RowSpan="7" Margin="15 0 15 15"/>
+    </Grid>
+</Window>

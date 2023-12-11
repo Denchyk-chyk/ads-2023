@@ -1,7 +1,7 @@
 ﻿namespace Lab_4
 {
 	//Користувацька реалізація черги
-	internal class Deque<T> : Queue<T>
+	public class Deque<T> : Queue<T>
 	{
 		//Додавання елемента, якщо стек порожній
 		private bool PushToEmpty(T value)

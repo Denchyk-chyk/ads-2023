@@ -1,7 +1,7 @@
 ﻿namespace Lab_4
 {
 	//Користувацька реалізація черги з пріоритетами
-	internal class PriorityQueue<T> : Queue<T> where T : IComparable<T>
+	public class PriorityQueue<T> : Queue<T> where T : IComparable<T>
 	{ 
 		//Додавання елемента в кінець
 		public override void PushBack(T value)
@@ -23,6 +23,7 @@
 				{
 					current = current.Next = new Node<T>(value, current, current.Next);
 					if (current.Next != null) current.Next.Previous = current;
+					else Last = current;
 				}
 			}
 

@@ -3,7 +3,7 @@
 namespace Lab_4
 {
 	//Абстрактний клас, що є основою, як двосторонньої черги, так і черги з пріоритетом
-	internal abstract class Queue<T> : IEnumerable<T>
+	public abstract class Queue<T> : IEnumerable<T>
 	{
 		public int Length //Довжина черги
 		{
@@ -43,10 +43,18 @@ namespace Lab_4
 		//Реалізація інтерфейсу IEnumerable, необхідна для обходу черги через foreach
 		public IEnumerator<T> GetEnumerator() => new QueueEnumertor<T>(First);
 		IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+
+		//Вивід черги, як рядка
+		public override string ToString()
+		{
+			string elemets = $"[ {{{Length}}} | ";
+			foreach (var item in this) elemets += $"{item} ";
+            return $"{elemets}]";
+		}
 	}
 
 	//Користувацька реалізація вузла черги
-	internal class Node<T>(T value, Node<T> previous, Node<T> next)
+	public class Node<T>(T value, Node<T> previous, Node<T> next)
 	{
 		public T Value = value; //Значення
 		public Node<T> Next = next; //Посилання на наступний вузол
