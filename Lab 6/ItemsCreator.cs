@@ -1,4 +1,4 @@
-﻿namespace Lab_6_Logics
+﻿namespace Lab_6
 {
 	internal static class ItemsCreator
 	{

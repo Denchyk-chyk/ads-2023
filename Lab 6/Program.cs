@@ -1,4 +1,4 @@
-﻿using Lab_6_Logics;
+﻿using Lab_6;
 
 ItemsCreator.AdjMatUnoriented().PrintAdj();
 ItemsCreator.AdjMatOriented().PrintAdj();
