@@ -1,2 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using Lab_6_Logics;
+
+ItemsCreator.AdjMatUnoriented().PrintAdj();
+ItemsCreator.AdjMatOriented().PrintAdj();
+ItemsCreator.IncMatOriented().PrintInc();

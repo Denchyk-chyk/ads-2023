@@ -15,7 +15,7 @@
 			}
 			return new string(letters);
 		}
-
+	
 		static Layout()
 		{
 			var english = "`~@#$%^&qwertyuiop[]asdfghjkl;'zxcvbnm,./QWERTYUIOP{}|ASDFGHJKL:\"ZXCVBNM<>?";
