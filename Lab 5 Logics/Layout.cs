@@ -1,4 +1,4 @@
-﻿namespace Lab_5_Logics
+﻿namespace Lab5Logics
 {
 	public class Layout
 	{

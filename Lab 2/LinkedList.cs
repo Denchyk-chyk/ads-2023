@@ -1,4 +1,4 @@
-﻿namespace Lab_2
+﻿namespace Lab2
 {
 	//Користувацька реалізація зв'язаних списків
 	public class LinkedList

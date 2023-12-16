@@ -1,4 +1,4 @@
-﻿using Lab_5_Logics;
+﻿using Lab5Logics;
 
 Console.OutputEncoding = System.Text.Encoding.UTF8;
 

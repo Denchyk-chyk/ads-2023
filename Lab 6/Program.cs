@@ -1,4 +1,4 @@
-﻿using Lab_6;
+﻿using Lab6;
 
 while (true)
 {

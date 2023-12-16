@@ -1,4 +1,4 @@
-﻿namespace Lab_4
+﻿namespace Lab4
 {
 	//Користувацька реалізація черги
 	public class Deque<T> : Queue<T>

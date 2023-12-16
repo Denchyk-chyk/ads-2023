@@ -1,5 +1,4 @@
-﻿
-#include <locale>
+﻿#include <locale>
 #include <string>
 #include <iostream>
 #include <windows.h>

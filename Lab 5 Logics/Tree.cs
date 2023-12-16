@@ -1,4 +1,4 @@
-﻿namespace Lab_5_Logics
+﻿namespace Lab5Logics
 {
 	public class Tree<K, V> : IComparable<Tree<K, V>>, IComparable<K> where K : IComparable<K>
 	{

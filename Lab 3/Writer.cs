@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace Lab_3
+namespace Lab3
 {
 	internal class Writer<T>
 	{

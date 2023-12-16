@@ -1,7 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 using System.Windows.Controls;
 
-namespace Lab_2
+namespace Lab2
 {
 	internal class Reader
 	{

@@ -1,9 +1,9 @@
-﻿using Lab_5_Logics;
+﻿using Lab5Logics;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Lab_5
+namespace Lab5
 {
 	public partial class MainWindow : Window
 	{
@@ -92,8 +92,8 @@ namespace Lab_5
 
 		private void Layout_Click(object sender, RoutedEventArgs e)
 		{
-			Display(Lab_5_Logics.Layout.Tokens);
-			Info.Text = Lab_5_Logics.Layout.Switch(Input.Text);
+			Display(Lab5Logics.Layout.Tokens);
+			Info.Text = Lab5Logics.Layout.Switch(Input.Text);
         }
     }
 }

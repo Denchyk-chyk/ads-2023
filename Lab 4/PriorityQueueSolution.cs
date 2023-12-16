@@ -1,7 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 using System.Windows.Controls;
 
-namespace Lab_4
+namespace Lab4
 {
 	internal class PriorityQueueSolution(TextBox box)
     {

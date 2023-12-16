@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-namespace Lab_4
+namespace Lab4
 {
 	//Абстрактний клас, що є основою, як двосторонньої черги, так і черги з пріоритетом
 	public abstract class Queue<T> : IEnumerable<T>

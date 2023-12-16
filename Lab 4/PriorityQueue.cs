@@ -1,4 +1,4 @@
-﻿namespace Lab_4
+﻿namespace Lab4
 {
 	//Користувацька реалізація черги з пріоритетами
 	public class PriorityQueue<T> : Queue<T> where T : IComparable<T>

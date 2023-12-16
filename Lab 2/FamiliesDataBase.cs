@@ -1,9 +1,6 @@
-﻿using System.Printing;
-using System.Text.RegularExpressions;
-using System.Windows.Controls;
-using System.Windows.Interop;
+﻿using System.Windows.Controls;
 
-namespace Lab_2
+namespace Lab2
 {
 	internal class FamiliesDataBase
 	{

@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace Lab_4
+namespace Lab4
 {
 	internal class DequeSolution(TextBox box)
 	{

@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 using System.Windows.Controls;
 
-namespace Lab_3
+namespace Lab3
 {
 	internal partial class Analyzer
     {
