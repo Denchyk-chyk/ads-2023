@@ -2,11 +2,11 @@
 {
 	public static class Converter
 	{
-		public static sbyte[,] ToAdj(this sbyte[,] adj)
+		public static sbyte[,] ToAdj(this sbyte[,] inc)
 		{
-			var height = adj.GetLength(0);
-			var width = adj.GetLength(1);
-			var inc = new sbyte[height, height];
+			var height = inc.GetLength(0);
+			var width = inc.GetLength(1);
+			var adj = new sbyte[height, height];
 
 			for (sbyte x = 0; x < width; x++)
 			{
@@ -15,30 +15,30 @@
 
 				for (sbyte y = 0; y < height; y++)
 				{
-					if (adj[y, x] != 0)
+					if (inc[y, x] != 0)
 					{
-						if (adj[y, x] == 2)
+						if (inc[y, x] == 2)
 						{
-							inc[y, y] = 1;
+							adj[y, y] = 1;
 							break;
 						}
 						else
 						{
 							if (hasSecond)
 							{
-								nodes[0] = (y, adj[y, x]);
+								nodes[0] = (y, inc[y, x]);
 
 								if (nodes[0].value > nodes[1].value)
 									(nodes[0].value, nodes[1].value) = (nodes[1].value, nodes[0].value);
 
-								inc[nodes[0].pos, nodes[1].pos] = 1;
+								adj[nodes[1].pos, nodes[0].pos] = 1;
 
 								if (nodes[0].value == 1)
-									inc[nodes[1].pos, nodes[0].pos] = 1;
+									adj[nodes[0].pos, nodes[1].pos] = 1;
 							}
 							else
 							{
-								nodes[1] = (y, adj[y, x]);
+								nodes[1] = (y, inc[y, x]);
 								hasSecond = true;
 							}
 						}
@@ -46,7 +46,7 @@
 				}
 			}
 
-			return inc;
+			return adj;
 		}
 
 		public static sbyte[,] ToInc(this sbyte[,] adj)

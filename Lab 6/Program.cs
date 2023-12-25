@@ -1,4 +1,7 @@
 ﻿using Lab6;
+using System.Text;
+
+Console.OutputEncoding = Encoding.UTF8;
 
 while (true)
 {
